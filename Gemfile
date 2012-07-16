@@ -6,6 +6,7 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'haml'
 
 gem 'json'
 
@@ -37,3 +38,8 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+group :development, :test do
+	gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'rspec-rails'
+end
