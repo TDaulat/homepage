@@ -8,10 +8,10 @@ describe WelcomeController do
         mock_model(Post, :title => 'Post 2'),
         mock_model(Post, :title => 'Post 3')
       ]
-      Post.stub!(:recent).and_return(@mock_posts)
+      Post.stub!(:recent_public).and_return(@mock_posts)
     end
     it "should find the most recent posts" do
-      Post.should_receive(:recent).and_return(@mock_posts)
+      Post.should_receive(:recent_public).and_return(@mock_posts)
       get :index
     end
 

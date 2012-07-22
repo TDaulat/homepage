@@ -1,11 +1,11 @@
+Given /^There are (\d+) public blog posts in the system$/ do |post_count|
+  (1..post_count.to_i).each do |i|
+    Post.create!(:title => "Blog post #{i}", :public => 1, :published_at => Time.now)
+  end
+end
+
 Given /^I am on the main page$/ do
 	visit '/'
-end
-	
-Given /^There are (\d+) blog posts$/ do |post_count|
-  (1..post_count.to_i).each do |i|
-    Post.create!(:title => "Blog post #{i}")
-  end
 end
 
 Then /^I should see a listing containing (\d+) posts$/ do |post_count|
@@ -13,5 +13,5 @@ Then /^I should see a listing containing (\d+) posts$/ do |post_count|
 end
 
 Then /^I should see a link to view the post archives$/ do
-  page.should have_link('View Post Archives', href: posts_path)
+  page.should have_link('Article Archives', href: posts_path)
 end

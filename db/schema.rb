@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120715234359) do
 
   create_table "posts", :force => true do |t|
-    t.string   "description"
+    t.string   "title"
     t.text     "body"
     t.datetime "published_at"
     t.boolean  "public"
