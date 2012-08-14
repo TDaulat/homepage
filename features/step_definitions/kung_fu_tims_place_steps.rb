@@ -8,8 +8,8 @@ Given /^I am on the main page$/ do
 	visit '/'
 end
 
-Then /^I should see a listing containing (\d+) posts$/ do |post_count|
-  assert_equal page.all('#posts .post').count.to_i, post_count.to_i
+Then /^I should see the most recent post$/ do
+  assert_equal page.all('#posts .post').count.to_i, 1
 end
 
 Then /^I should see a link to view the post archives$/ do

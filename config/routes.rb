@@ -1,7 +1,11 @@
 KungFuTimsPlace::Application.routes.draw do
   root :to => 'welcome#index'
 
-  resources :posts
+  resources :posts, :only => [:index, :show]
+  
+  # namespace :admin do
+  #   resources :posts
+  # end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
