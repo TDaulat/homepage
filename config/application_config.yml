@@ -1,0 +1,9 @@
+defaults: &defaults
+  a_setting: "hello"
+
+development:
+  <<: *defaults
+
+production:
+  
+  <<: *defaults

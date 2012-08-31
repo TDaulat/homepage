@@ -1,8 +1,11 @@
 KungFuTimsPlace::Application.routes.draw do
   root :to => 'welcome#index'
 
-  resources :posts, :only => [:index, :show]
-  
+  resources :posts#, :only => [:index, :show]
+
+  match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/signout', :to => 'sessions#destroy', :as => 'signout'
+    
   # namespace :admin do
   #   resources :posts
   # end
