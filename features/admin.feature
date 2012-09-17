@@ -1,12 +1,15 @@
-Feature: As an admin user
-  Scenario: Visiting the admin section
+Feature: Visiting the admin section
+  Scenario: As an admin user
     Given I am currently logged in with the admin priviledge
     When I visit the admin section
-    Then I should see the article management view
+    Then I should see the dashboard
 
-Feature: As a non-admin user
-  Scenario: Visiting the admin section
+  Scenario: As a non admin
     Given I am currently logged in without the admin priviledge
     When I visit the admin section
     Then I should be redirected to the main page
-    And I should see an alert indicating that I do not have permission
+
+  Scenario: When not logged in
+    Given I am currently not logged in
+    When I visit the admin section
+    Then I should be redirected to the main page

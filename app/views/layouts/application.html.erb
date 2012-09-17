@@ -36,7 +36,18 @@
             </li>
             <li><%= link_to "Signout", signout_path %></li>
           <%- else %>
-            <li><%= link_to "Sign In With Facebook", "/auth/facebook" %></li>
+            <%- if Rails.env = 'test' %>
+              <li>
+                <%= link_to "Admin Login", testing_login_path(:admin => true) %>
+              </li>
+              <li>
+                <%= link_to "Non-Admin Login", testing_login_path %>
+              </li>
+            <%- else %>
+              <li>
+                <%= link_to "Sign In With Facebook", "/auth/facebook" %>
+              </li>
+            <% end %>
           <% end %>
         </ul>
       </div>

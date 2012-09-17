@@ -5,10 +5,16 @@ KungFuTimsPlace::Application.routes.draw do
 
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/signout', :to => 'sessions#destroy', :as => 'signout'
+  
+  if Rails.env.test?
+    match '/auth/testing_login', :to => 'sessions#testing_login', :as => 'testing_login'
+  end
     
-  # namespace :admin do
-  #   resources :posts
-  # end
+  namespace :admin do |admin|
+    match '/', :controller => 'dashboard', :action => 'index' 
+    resources :posts
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
