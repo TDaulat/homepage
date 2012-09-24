@@ -36,7 +36,7 @@
             </li>
             <li><%= link_to "Signout", signout_path %></li>
           <%- else %>
-            <%- if Rails.env = 'test' %>
+            <%- if Rails.env.test? %>
               <li>
                 <%= link_to "Admin Login", testing_login_path(:admin => true) %>
               </li>
