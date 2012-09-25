@@ -13,3 +13,7 @@ Then /^I should be redirected to the main page$/ do
   uri = URI.parse(current_url)
   "#{uri.path}".should == root_path
 end
+
+Then /^show me the page$/ do
+  save_and_open_page
+end
