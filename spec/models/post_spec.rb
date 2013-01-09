@@ -13,7 +13,6 @@ describe 'Post' do
     end
     
     it 'should require a title' do
-      raise "hello"
       Post.new(@valid_attributes.except(:title)).should have(1).errors_on(:title)
     end
   end
