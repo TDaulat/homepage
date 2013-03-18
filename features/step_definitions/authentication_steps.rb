@@ -10,7 +10,7 @@ Given /^I am currently logged in (with|without) the admin priviledge$/ do |with_
 
   visit '/'
   click_link('Signout') if page.has_link?('Signout')
-  link = admin ? "Admin Login" : "Non-Admin Login"
+  link = admin ? "Admin Login" : "User Login"
   click_link(link)
 end
 
